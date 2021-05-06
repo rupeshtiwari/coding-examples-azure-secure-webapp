@@ -1,15 +1,12 @@
-
-Exercise - Create and secure a web app with Microsoft identity
-==============================================================
+# Exercise - Create and secure a web app with Microsoft identity
 
 Completed200 XP
 
--   14 minutes
+- 14 minutes
 
 In this exercise, you’ll learn how to create a .NET Web application that uses Microsoft identity to log in, and to show the claims available to apply authorization checks.
 
-Create an Azure AD application
-------------------------------
+## Create an Azure AD application
 
 Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com/). Sign in using a **Work or School Account** that has global administrator rights to the tenant.
 
@@ -25,8 +22,8 @@ On the **App registrations** page, select **New registration**.
 
 On the **Register an application** page, set the values as follows:
 
--   **Name**: User Group Role
--   **Supported account types**: Accounts in this organizational directory only (Single tenant)
+- **Name**: User Group Role
+- **Supported account types**: Accounts in this organizational directory only (Single tenant)
 
 Select **Register** to create the application. On the **Product Catalog WebApp** page, copy the values **Application (client) ID** and **Directory (tenant) ID**; you'll need these values later in this exercise.
 
@@ -40,16 +37,15 @@ Select **Add a platform**, then select **Web**.
 
 On the **Configure Web** panel, use the following values to configure the application:
 
--   **Redirect URIs**: https://localhost:5001/signin-oidc
--   **Logout URL**: https://localhost:5001/signout-oidc
--   **Implicit grant and hybrid flows**: select **ID tokens (used for implicit and hybrid flows)**
+- **Redirect URIs**: https://localhost:5001/signin-oidc
+- **Logout URL**: https://localhost:5001/signout-oidc
+- **Implicit grant and hybrid flows**: select **ID tokens (used for implicit and hybrid flows)**
 
 Select **Configure** when finished setting these values.
 
 ![Screenshot of the application configuration](https://docs.microsoft.com/en-us/learn/m365-developer/identity-users-groups-approles/media/03-azure-ad-portal-new-app-details-03.png)
 
-Create a single organization ASP.NET web application
-----------------------------------------------------
+## Create a single organization ASP.NET web application
 
 Open your command prompt, navigate to a directory where you want to save your work, create a new folder, and change directory into that folder.
 
@@ -146,13 +142,16 @@ dotnet run
 
 ```
 
-Open a browser and navigate to the URL  **https://localhost:5001**. The web application will redirect you to the Azure AD sign-in page.
+Open a browser and navigate to the URL **https://localhost:5001**. The web application will redirect you to the Azure AD sign-in page.
 
 Sign in using a Work and School account from your Azure AD directory. After login and consent, Azure AD will redirect you back to the web application. Notice some of the details from the claims included in the ID token.
 
 ![Screenshot of the application](https://docs.microsoft.com/en-us/learn/m365-developer/identity-users-groups-approles/media/03-application-claims-display.png)
 
-Summary
--------
+## Summary
 
 In this exercise, you learned how to create a .NET Web application that uses Microsoft identity to log in, and to show the claims available to apply authorization checks.
+
+## Reference
+
+1. https://docs.microsoft.com/en-us/learn/modules/identity-users-groups-approles/3-exercise-create-web-app
